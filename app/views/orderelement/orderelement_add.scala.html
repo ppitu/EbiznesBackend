@@ -1,0 +1,20 @@
+@(orderElement: Form[CreateOrderElementForm], product: Seq[Product])(implicit request: MessagesRequestHeader, flash: Flash)
+
+@import helper._
+
+@flash.get("success").getOrElse("")
+
+@form(routes.OrderElementController.addOrderElementHandler) {
+    @helper.CSRF.formField
+
+    <select name="productId" id="productId">
+    @for(pro <- product) {
+        <option value="@pro.id">@pro.name</option>
+    }
+    </select>
+
+    <div class="button">
+        <input type="submit" value="Add product">
+    </div>
+
+}

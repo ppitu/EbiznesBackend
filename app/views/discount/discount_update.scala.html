@@ -1,0 +1,38 @@
+
+@(discount: Form[UpdateDiscountForm],user: Seq[UserMy], product: Seq[Product])(implicit request: MessagesRequestHeader, flash: Flash)
+
+@import helper._
+
+@flash.get("success").getOrElse("")
+
+@form(routes.DiscountController.updateDiscountHandler) {
+    @helper.CSRF.formField
+    <input name="id" id="id" value="@discount("id").value" type="hidden" />
+
+    <select name="user_id" id="user_id">
+    @for(use <- user){
+        @if(use.id.toString==discount("user_id").value.getOrElse(0)) {
+            <option value="@use.id" selected>@use.name</option>
+        }else{
+            <option value="@use.id">@use.name</option>
+        }
+
+    }
+    </select>
+
+    <select name="product_id" id="product_id">
+    @for(pro <- product){
+        @if(pro.id.toString==discount("product_id").value.getOrElse(0)) {
+            <option value="@pro.id" selected>@pro.name</option>
+        }else{
+            <option value="@pro.id">@pro.name</option>
+        }
+
+    }
+    </select>
+
+
+    <div class="buttons">
+        <input type="submit" value="Update Product"/>
+    </div>
+}

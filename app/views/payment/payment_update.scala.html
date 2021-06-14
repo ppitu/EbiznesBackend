@@ -1,0 +1,39 @@
+@import helper._
+
+@(payment: Form[UpdatePaymentForm], user: Seq[UserMy], creditCard: Seq[CreditCard])(implicit request: MessagesRequestHeader, flash: Flash)
+
+@flash.get("success").getOrElse("")
+
+@form(routes.PaymentController.updatePaymentHandler) {
+    @helper.CSRF.formField
+
+    <input name="id" id="id" value="@payment("id").value" type="hidden" />
+
+    <select name="user_id" id="user_id">
+    @for(use <- user){
+        @if(use.id.toString==payment("user_id").value.getOrElse(0)) {
+            <option value="@use.id" selected>@use.name</option>
+        }else{
+            <option value="@use.id">@use.name</option>
+        }
+
+    }
+    </select>
+
+    <select name="creditCard_id" id="creditCard_id">
+    @for(card <- creditCard) {
+        @if(card.id.toString==payment("creditCard_id").value.getOrElse(0)) {
+            <option value="@card.id" selected>@card.number</option>
+        }else{
+            <option value="@card.id">@card.number</option>
+        }
+    }
+    </select>
+
+    @inputText(payment("date"))
+
+    <div class="button">
+        <input type="submit" value="Add product">
+    </div>
+
+}

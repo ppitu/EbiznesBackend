@@ -1,0 +1,17 @@
+@import helper._
+
+@(credircard: Form[CreateCreditCardForm])(implicit request: MessagesRequestHeader, flash: Flash)
+
+@flash.get("success").getOrElse("")
+
+@form(routes.CreditCardController.addCreditCardHandler) {
+    @helper.CSRF.formField
+    @helper.inputText(credircard("holder_name"))
+    @helper.inputText(credircard("number"))
+    @helper.inputText(credircard("cvv"))
+    @helper.inputText(credircard("date"))
+
+    <div class="button">
+        <input type="submit" value="Add category"/>
+    </div>
+}

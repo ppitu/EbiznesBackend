@@ -1,0 +1,31 @@
+
+@(order: Form[UpdateOrderForm],user: Seq[UserMy])(implicit request: MessagesRequestHeader, flash: Flash)
+
+@import helper._
+
+@flash.get("success").getOrElse("")
+
+@form(routes.ProductController.updateProductHandler) {
+    @helper.CSRF.formField
+    <input name="id" id="id" value="@order("id").value" type="hidden" />
+
+    <select name="userId" id="userId">
+    @for(use <- user){
+        @if(use.id==order("user_id").value.getOrElse(0)) {
+            <option value="@use.id" selected>@use.name</option>
+        }else{
+            <option value="@use.id">@use.name</option>
+        }
+
+    }
+    </select>
+
+    @inputText(order("amount"))
+    @inputText(order("date"))
+
+
+
+    <div class="buttons">
+        <input type="submit" value="Update Product"/>
+    </div>
+}

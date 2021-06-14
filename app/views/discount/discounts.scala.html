@@ -1,0 +1,7 @@
+@(discounts: Seq[Discount])
+
+@for(discount <- discounts) {
+    <strong>@discount.id</strong>
+    <strong>@discount.productId</strong>
+    <strong>@discount.userId</strong><br/>
+}

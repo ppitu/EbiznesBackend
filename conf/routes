@@ -1,0 +1,140 @@
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+#User routers
+GET /users controllers.UserController.getUsers
+GET /usersform controllers.UserController.getUsersForm
+GET /users/:id controllers.UserController.getUser(id: String)
+GET /usersform/:id controllers.UserController.getUserForm(id: String)
+GET /usersadd controllers.UserController.addUserForm
+POST /usersaddhandler controllers.UserController.addUserHandler
+POST /users controllers.UserController.addUser
+PUT /users/:id controllers.UserController.updateUser(id: String)
+GET /usersupdate/:id controllers.UserController.updateUserForm(id: String)
+POST /usersupdatehandler controllers.UserController.updateUserHandler
+DELETE /users/:id controllers.UserController.deleteUser(id: String)
+
+#Product routers
+GET /products controllers.ProductController.getProducts
+GET /productsform controllers.ProductController.getProductsForm
+GET /products/:id controllers.ProductController.getProduct(id: String)
+GET /productsform/:id controllers.ProductController.getProductForm(id: String)
+GET /productsadd  controllers.ProductController.addProductForm
+POST /productsaddhandler controllers.ProductController.addProductHandler
+GET /productsupdate/:id controllers.ProductController.updateProductForm(id: String)
+POST /productsupdatehandler controllers.ProductController.updateProductHandler
+POST /products controllers.ProductController.addProduct
+PUT /products/:id controllers.ProductController.updateProduct(id: String)
+DELETE /products/:id controllers.ProductController.deleteProduct(id: String)
+
+#Category routers
+GET /categories controllers.CategoryController.getCategories
+GET /categoriesform controllers.CategoryController.getCategoriesForm
+GET /categories/:id controllers.CategoryController.getCategory(id: Long)
+GET /categoriesform/:id controllers.CategoryController.getCategoryForm(id: String)
+GET /categoriesadd controllers.CategoryController.addCategoryForm
+POST /categories controllers.CategoryController.addCategory
+POST /categorieshandler controllers.CategoryController.addCategoryHandler
+PUT /categories/:id controllers.CategoryController.updateCategory(id: String)
+GET /categoriesupdate/:id controllers.CategoryController.updateFormCategory(id: String)
+POST /categorieshandlerupdate controllers.CategoryController.updateCategoryHandler
+DELETE /categories/:id controllers.CategoryController.deleteCategory(id: String)
+
+#Discount routers
+GET /discount controllers.DiscountController.getDiscounts
+GET /discountsform controllers.DiscountController.getDiscountsForm
+GET /discount/:id controllers.DiscountController.getDiscount(id: String)
+GET /discountform/:id controllers.DiscountController.getDiscountForm(id: String)
+GET /discountadd controllers.DiscountController.addDiscountForm
+POST /discountaddhandler controllers.DiscountController.addDiscountHandler
+GET /discountupdate controllers.DiscountController.updateDiscountForm(id: String)
+POST /discountupdatehandler controllers.DiscountController.updateDiscountHandler
+POST /discount controllers.DiscountController.addDiscount
+PUT /discount/:id controllers.DiscountController.updateDiscount(id: String)
+DELETE /discount/:id controllers.DiscountController.deleteDiscount(id: String)
+
+#Order routers
+GET /orders controllers.OrderController.getOrders
+GET /ordersfrom controllers.OrderController.getOrdersForm
+GET /orders/:id controllers.OrderController.getOrder(id: String)
+GET /orderform/:id controllers.OrderController.getOrderForm(id: String)
+GET /orderadd controllers.OrderController.addOrderForm
+POST /orderaddhandler controllers.OrderController.addOrderHandler
+GET /orderupdate/:id controllers.OrderController.updateOrderForm(id: String)
+POST /orderupdatehandler controllers.OrderController.updateProductHandler
+POST /orders controllers.OrderController.addOrder
+PUT /orders/:id controllers.OrderController.updateOrder(id: String)
+DELETE /orders/:id controllers.OrderController.deleteOrder(id: String)
+
+#Payments routers
+GET /payments controllers.PaymentController.getPayments
+GET /paymentsform controllers.PaymentController.getPaymentsForm
+GET /payments/:id controllers.PaymentController.getPayment(id: String)
+GET /paymentform/:id controllers.PaymentController.getPaymentForm(id: String)
+GET /paymentadd controllers.PaymentController.addPaymentForm
+POST /paymentaddhandler controllers.PaymentController.addPaymentHandler
+GET /paymentupdate/:id controllers.PaymentController.updatePaymentForm(id: String)
+POST /paymentupdatehandler controllers.PaymentController.updatePaymentHandler
+POST /payments controllers.PaymentController.addPayment
+PUT /payments/:id controllers.PaymentController.updatePayment(id: String)
+DELETE /payments/:id controllers.PaymentController.deletePayment(id: String)
+
+#Promotion routers
+GET /promotion controllers.PromotionController.getPromotions
+GET /promotionform controllers.PromotionController.getPromotionsForm
+GET /promotion/:id controllers.PromotionController.getPromotion(id: String)
+GET /promotionform/:id controllers.PromotionController.getPromotionForm(id: String)
+GET /promotionadd controllers.PromotionController.addPromotionForm
+POST /promotionaddhandler controllers.PromotionController.addPromotionHandler
+GET /promotionupdate/:id controllers.PromotionController.updatePromotionForm(id: String)
+POST /promotionupdatehandler controllers.PromotionController.updatePromotionHandler
+POST /promotion controllers.PromotionController.addPromotion
+PUT /promotion/:id controllers.PromotionController.updatePromotion(id: String)
+DELETE /promotion/:id controllers.PromotionController.deletePromotion(id: String)
+
+#CreditCards routers
+GET /creditcards controllers.CreditCardController.getCreditCards
+GET /creditcardsform controllers.CreditCardController.getCreditCardsForm
+GET /creditcardform/:id controllers.CreditCardController.getCreditCardForm(id: String)
+GET /creditcards/:id controllers.CreditCardController.getCreditCard(id: String)
+GET /creditcardsadd controllers.CreditCardController.addCreditCardForm
+POST /creditcardsaddhandler controllers.CreditCardController.addCreditCardHandler
+GET /creditcardsupdate/:id controllers.CreditCardController.updateCreditCardForm(id: String)
+POST /creditcardsupdatehandler controllers.CreditCardController.updateCreditCardHandler
+POST /creditcards controllers.CreditCardController.addCreditCard
+PUT /creditcards/:id controllers.CreditCardController.updateRCreditCard(id: String)
+DELETE /creditcards/:id controllers.CreditCardController.deleteCreditCard(id: String)
+
+#OrderElements routers
+GET /orderelements controllers.OrderElementController.getOrderElements
+GET /orderelementsform controllers.OrderElementController.getOrderElementsForm
+GET /orderelementform/:id controllers.OrderElementController.getOrderElementForm(id: String)
+GET /orderelements/:id controllers.OrderElementController.getOrderElement(id: String)
+GET /orderelementsadd controllers.OrderElementController.addOrderElementForm
+POST /orderelementsaddhandler controllers.OrderElementController.addOrderElementHandler
+GET /orderelementsupdateform controllers.OrderElementController.updateOrderElementForm(id: String)
+POST /orderelementsupdatehandler controllers.OrderElementController.updateOrderElementHandler
+POST /orderelements controllers.OrderElementController.addOrderElement
+PUT /orderelements/:id controllers.OrderElementController.updateOrderElement(id: String)
+DELETE /orderelements/:id controllers.OrderElementController.deleteOrderElement(id: String)
+
+#Address routers
+GET /address controllers.AddressController.getAddresses
+GET /addressform controllers.AddressController.getAddressesForm
+GET /address/:id controllers.AddressController.getAddress(id: String)
+GET /addressform/:id controllers.AddressController.getAddressForm(id: String)
+GET /addressaddform controllers.AddressController.addAddressForm
+POST /addressaddhandler controllers.AddressController.addAddressHandler
+GET /addressupdateform/:id controllers.AddressController.updateAddressForm(id: String)
+POST /addressupdatehandler controllers.AddressController.updateAddressHandler
+POST /address controllers.AddressController.addAddress
+PUT /address/:id controllers.AddressController.updateAddress(id: String)
+DELETE /address/:id controllers.AddressController.deleteAddress(id: String)
+
+
+# Authentication
+#POST        /signIn                                   controllers.SignInController.signIn
+#POST        /signOut                                  controllers.SignInController.signOut
+#GET         /authenticate/:provider        controllers.SocialAuthController.authenticate(provider: String)

@@ -1,0 +1,17 @@
+@import helper._
+
+@(address: Form[CreateAddressForm])(implicit request: MessagesRequestHeader, flash: Flash)
+
+@flash.get("success").getOrElse("")
+
+@form(routes.AddressController.addAddressHandler) {
+    @helper.CSRF.formField
+    @helper.inputText(address("street"))
+    @helper.inputText(address("zipcode"))
+    @helper.inputText(address("number"))
+    @helper.inputText(address("city"))
+
+    <div class="button">
+        <input type="submit" value="Add category"/>
+    </div>
+}

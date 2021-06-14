@@ -1,0 +1,6 @@
+@(promotions: Seq[Promotion])
+
+@for(promotion <- promotions) {
+    <strong>@promotion.id</strong>
+    <strong>@promotion.productId</strong><br/>
+}

@@ -1,0 +1,18 @@
+@(creditCard: Form[UpdateCreditCardForm])(implicit request: RequestHeader, messagesProvider: MessagesProvider, flash: Flash)
+
+@import helper._
+
+@flash.get("success").getOrElse("")
+
+@form(routes.CreditCardController.updateCreditCardHandler) {
+    @helper.CSRF.formField
+    <input name="id" id="id" value="@creditCard("id").value" type="hidden" />
+    @inputText(creditCard("holder_name"))
+    @inputText(creditCard("number"))
+    @inputText(creditCard("cvv"))
+    @inputText(creditCard("date"))
+
+    <div class="button">
+        <input type="submit" value="Update Category">
+    </div>
+}

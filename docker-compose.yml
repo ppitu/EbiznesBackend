@@ -1,0 +1,11 @@
+version: '3'
+services:
+  backend:
+    image: ppitu/e-biznes:latest
+    ports:
+      - 12345:9000
+      - 12346:5000
+    volumes:
+      - .:/home/ppitu/project/backend
+    working_dir: /home/ppitu/project/backend
+    command: bash -c "cd /home/ppitu/project/backend && sbt run"

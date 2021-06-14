@@ -1,0 +1,25 @@
+@(promotion: Form[UpdatePromotionForm],product: Seq[Product])(implicit request: MessagesRequestHeader, flash: Flash)
+
+@import helper._
+
+@flash.get("success").getOrElse("")
+
+@form(routes.PromotionController.updatePromotionHandler) {
+    @helper.CSRF.formField
+    <input name="id" id="id" value="@promotion("id").value" type="hidden" />
+
+    <select name="product_id" id="product_id">
+    @for(pro <- product){
+        @if(pro.id==promotion("product_id").value.getOrElse(0)) {
+            <option value="@pro.id" selected>@pro.name</option>
+        }else{
+            <option value="@pro.id">@pro.name</option>
+        }
+
+    }
+    </select>
+
+    <div class="buttons">
+        <input type="submit" value="Update Product"/>
+    </div>
+}

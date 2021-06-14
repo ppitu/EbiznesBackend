@@ -1,0 +1,8 @@
+@(users: Seq[UserMy])
+
+@for(user <- users) {
+    <strong>@user.id</strong>
+    <strong>@user.name</strong>
+    <strong>@user.password</strong>
+    <strong>@user.email</strong><br/>
+}

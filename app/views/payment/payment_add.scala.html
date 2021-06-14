@@ -1,0 +1,28 @@
+@import helper._
+
+@(payment: Form[CreatePaymentForm], user: Seq[UserMy], creditCard: Seq[CreditCard])(implicit request: MessagesRequestHeader, flash: Flash)
+
+@flash.get("success").getOrElse("")
+
+@form(routes.PaymentController.addPaymentHandler) {
+    @helper.CSRF.formField
+
+    <select name="user_id" id="user_id">
+    @for(use <- user) {
+        <option value="@use.id">@use.name</option>
+    }
+    </select>
+
+    <select name="creditCard_id" id="creditCard_id">
+    @for(card <- creditCard) {
+        <option value="@card.id">@card.number</option>
+    }
+    </select>
+
+    @inputText(payment("date"))
+
+    <div class="button">
+        <input type="submit" value="Add product">
+    </div>
+
+}
