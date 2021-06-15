@@ -27,7 +27,7 @@ libraryDependencies ++= Seq(
   "com.mohiva" %% "play-silhouette-crypto-jca" % "7.0.0",
   "com.mohiva" %% "play-silhouette-totp" % "7.0.0",
   "com.mohiva" %% "play-silhouette-testkit" % "7.0.0" % "test",
-  "net.codingwell" %% "scala-guice" % "4.2.6"
+  "net.codingwell" %% "scala-guice" % "5.0.1"
 )
 libraryDependencies += "org.xerial" % "sqlite-jdbc" % "3.34.0"
 libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.9.3"

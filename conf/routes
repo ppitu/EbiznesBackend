@@ -135,6 +135,6 @@ DELETE /address/:id controllers.AddressController.deleteAddress(id: String)
 
 
 # Authentication
-#POST        /signIn                                   controllers.SignInController.signIn
-#POST        /signOut                                  controllers.SignInController.signOut
-#GET         /authenticate/:provider        controllers.SocialAuthController.authenticate(provider: String)
+POST        /signIn                                   controllers.SignInController.signIn
+POST        /signOut                                  controllers.SignInController.signOut
+GET         /authenticate/:provider        controllers.SocialAuthController.authenticate(provider: String)

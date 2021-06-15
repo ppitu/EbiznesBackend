@@ -1,4 +1,3 @@
-
 package controllers
 
 import com.mohiva.play.silhouette.api.Silhouette
@@ -7,9 +6,8 @@ import com.mohiva.play.silhouette.api.repositories.AuthInfoRepository
 import com.mohiva.play.silhouette.api.services.AuthenticatorService
 import com.mohiva.play.silhouette.api.util.{Clock, PasswordHasherRegistry}
 import com.mohiva.play.silhouette.impl.providers.{CredentialsProvider, SocialProviderRegistry}
-import models.{AuthTokenRepository, UserRepository}
-
 import javax.inject.{Inject, Singleton}
+import models.{AuthTokenRepository, UserRepository}
 import play.api.Logging
 import play.api.http.FileMimeTypes
 import play.api.i18n.{I18nSupport, Langs, MessagesApi}

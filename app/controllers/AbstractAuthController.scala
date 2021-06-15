@@ -2,7 +2,7 @@ package controllers
 
 import com.mohiva.play.silhouette.api.services.AuthenticatorResult
 import models.User
-import play.api.mvc.RequestHeader
+import play.api.mvc._
 
 import scala.concurrent.{ExecutionContext, Future}
 

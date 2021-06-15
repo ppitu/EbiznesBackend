@@ -1,12 +1,12 @@
 package controllers
 
 import com.mohiva.play.silhouette.api.exceptions.ProviderException
-import com.mohiva.play.silhouette.impl.providers.{CommonSocialProfileBuilder, SocialProvider}
+import com.mohiva.play.silhouette.impl.providers._
+import javax.inject.Inject
 import play.api.mvc.{Action, AnyContent, Cookie, Request}
 import play.filters.csrf.CSRF.Token
 import play.filters.csrf.{CSRF, CSRFAddToken}
 
-import javax.inject.Inject
 import scala.concurrent.{ExecutionContext, Future}
 
 class SocialAuthController @Inject()(scc: DefaultSilhouetteControllerComponents, addToken: CSRFAddToken)(implicit ex: ExecutionContext) extends SilhouetteController(scc) {
