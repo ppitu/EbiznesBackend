@@ -37,7 +37,7 @@ RUN apt-get install vim -y
 EXPOSE 9000
 
 #Play port
-EXPOSE 300
+EXPOSE 3000
 
 RUN useradd -ms /bin/bash ppitu
 RUN adduser ppitu sudo
