@@ -34,10 +34,10 @@ RUN apt-get install npm -y
 RUN apt-get install vim -y
 
 #React port
-
+EXPOSE 9000
 
 #Play port
-#EXPOSE 3001
+EXPOSE 300
 
 RUN useradd -ms /bin/bash ppitu
 RUN adduser ppitu sudo
@@ -48,4 +48,4 @@ WORKDIR /home/ppitu/project/backend
 #RUN mkdir /home/ppitu/project/backend
 
 VOLUME /home/ppitu/project/backend
-EXPOSE 9000
+
