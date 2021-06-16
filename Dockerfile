@@ -34,7 +34,7 @@ RUN apt-get install npm -y
 RUN apt-get install vim -y
 
 #React port
-EXPOSE 3000
+EXPOSE 9000
 
 #Play port
 EXPOSE 3001
