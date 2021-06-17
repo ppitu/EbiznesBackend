@@ -44,8 +44,11 @@ RUN adduser ppitu sudo
 
 USER ppitu
 WORKDIR /home/ppitu/project/backend
+RUN cd /home/ppitu/project/backend
+
+CMD sbt "start -Dhttp.port=8080"
 
 #RUN mkdir /home/ppitu/project/backend
 
-VOLUME /home/ppitu/project/backend
+#VOLUME /home/ppitu/project/backend
 
