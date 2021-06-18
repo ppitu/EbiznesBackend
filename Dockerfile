@@ -44,7 +44,7 @@ RUN adduser ppitu sudo
 
 USER ppitu
 
-RUN mkdir /home/ppitu/project/backend
+RUN mkdir -p /home/ppitu/project/backend
 
 WORKDIR /home/ppitu/project/backend
 RUN cd /home/ppitu/project/backend
