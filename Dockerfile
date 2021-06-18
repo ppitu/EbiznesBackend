@@ -43,12 +43,17 @@ RUN useradd -ms /bin/bash ppitu
 RUN adduser ppitu sudo
 
 USER ppitu
+
+RUN mkdir /home/ppitu/project/backend
+
 WORKDIR /home/ppitu/project/backend
 RUN cd /home/ppitu/project/backend
 
 COPY . .
 
-CMD sbt "start -Dhttp.port=8080"
+ENTRYPOINT bash /home/ppitu/project/backend/sbt run
+
+#CMD sbt "start -Dhttp.port=8080"
 
 #RUN mkdir /home/ppitu/project/backend
 
