@@ -53,7 +53,7 @@ COPY . .
 
 RUN ls -l
 
-ENTRYPOINT bash /home/ppitu/project/backend/sbt run
+RUN sbt run
 
 #CMD sbt "start -Dhttp.port=8080"
 
