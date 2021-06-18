@@ -51,6 +51,8 @@ RUN cd /home/ppitu/project/backend
 
 COPY . .
 
+RUN ls -l
+
 ENTRYPOINT bash /home/ppitu/project/backend/sbt run
 
 #CMD sbt "start -Dhttp.port=8080"
