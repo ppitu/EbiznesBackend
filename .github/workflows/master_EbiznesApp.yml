@@ -32,7 +32,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/ppitu/e-biznes:latest # index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2f0bef780fe248d7b0bfe8f633aeec92 }}/ppitu/e-biznes:latest # ${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2f0bef780fe248d7b0bfe8f633aeec92 }}/ppitu/e-biznes:latest # ${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -50,4 +50,4 @@ jobs:
         app-name: 'EbiznesApp'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_9606fd32f2d143a8ae7f6c20ad556b57 }}
-        images: 'index.docker.io/ppitu/e-biznes:latest' # 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2f0bef780fe248d7b0bfe8f633aeec92 }}/ppitu/e-biznes:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2f0bef780fe248d7b0bfe8f633aeec92 }}/ppitu/e-biznes:${{ github.sha }}'
