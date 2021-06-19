@@ -53,6 +53,8 @@ RUN ls -l
 
 RUN sbt playGenerateSecret
 
+CMD sbt run
+
 #CMD sbt "start -Dhttp.port=8080"
 
 #RUN mkdir /home/ppitu/project/backend
