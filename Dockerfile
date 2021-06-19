@@ -34,7 +34,8 @@ RUN apt-get install npm -y
 RUN apt-get install vim -y
 
 #React port
-EXPOSE 9000
+#EXPOSE 9000
+EXPOSE 8080
 
 RUN useradd -ms /bin/bash ppitu
 RUN adduser ppitu sudo
