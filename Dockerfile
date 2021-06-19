@@ -50,7 +50,7 @@ COPY . .
 
 RUN ls -l
 
-#RUN sbt run
+RUN sbt playGenerateSecret
 
 #CMD sbt "start -Dhttp.port=8080"
 
