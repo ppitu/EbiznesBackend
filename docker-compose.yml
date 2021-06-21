@@ -1,11 +1,13 @@
 version: '3'
 services:
   backend:
-    image: ppitu/e-biznes:latest
+    #image: ppitu/e-biznes:latest
+    network_mode: host
+    build: .
     ports:
-      - 12345:9000
-      - 12346:5000
+      - 9000:9000
+      - 3000:3000
     volumes:
-      - .:/home/ppitu/project/backend
-    working_dir: /home/ppitu/project/backend
-    command: bash -c "cd /home/ppitu/project/backend && sbt run"
+      - .:/home/ppitu/project/backend/
+    working_dir: /home/ppitu/project/backend/
+    command: bash -c "sbt run" # "cd /home/ppitu/project/backend && sbt run"

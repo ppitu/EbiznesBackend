@@ -34,18 +34,33 @@ RUN apt-get install npm -y
 RUN apt-get install vim -y
 
 #React port
-EXPOSE 9000
-
-#Play port
-EXPOSE 3000
+#EXPOSE 9000
+EXPOSE 8080
 
 RUN useradd -ms /bin/bash ppitu
 RUN adduser ppitu sudo
 
 USER ppitu
+
+RUN mkdir -p /home/ppitu/project/backend
+
 WORKDIR /home/ppitu/project/backend
+RUN cd /home/ppitu/project/backend
+
+COPY . .
+
+RUN ls -l
+
+RUN sbt package
+CMD sbt run
+
+#RUN sbt playGenerateSecret
+
+#CMD sbt run
+#ENTRYPOINT sbt run
+#CMD sbt "start -Dplay.evolutions.db.default.autoApply=true -Dhttp.port=8080"
 
 #RUN mkdir /home/ppitu/project/backend
 
-VOLUME /home/ppitu/project/backend
+#VOLUME /home/ppitu/project/backend
 

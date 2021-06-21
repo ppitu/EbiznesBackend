@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy container app to Azure Web App - EbiznesApp
+name: Build and deploy container app to Azure Web App - ebiznestyl
 
 on:
   push:
@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_c8cc68c808f3487f9f88f2fca361717f }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_560a31a0dca74d5db8f5f4b32671884a }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_9f5a6ad8e0244cb0ab22c6b1f2445c15 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_fbfe792e236e4ad3977399c5366f27c5 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c8cc68c808f3487f9f88f2fca361717f }}/ppitu/e-biznes:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_9f5a6ad8e0244cb0ab22c6b1f2445c15 }}/e-biznes:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -45,7 +45,7 @@ jobs:
       id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'EbiznesApp'
+        app-name: 'ebiznestyl'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_86c504e01ed94ffcbe26f79d83d39ecb }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_c8cc68c808f3487f9f88f2fca361717f }}/ppitu/e-biznes:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_188c2dd693214af0a3e90855839fea31 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_9f5a6ad8e0244cb0ab22c6b1f2445c15 }}/e-biznes:${{ github.sha }}'
