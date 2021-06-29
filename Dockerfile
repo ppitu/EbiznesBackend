@@ -27,6 +27,8 @@ RUN curl -sL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E4
 RUN apt-get update -y 
 RUN apt-get install sbt -y
 
+RUN apt-get install zip unzip
+
 #Install npm
 RUN apt-get install npm -y
 
@@ -51,8 +53,12 @@ COPY . .
 
 RUN ls -l
 
-RUN sbt package
-CMD sbt run
+#RUN sbt package
+#CMD sbt run
+
+RUN sbt dist
+RUN cd target/universal/
+CMD unzip backend-1.0.zip && cd backend-1.0/bin/ && ./backend -Dplay.evolutions.db.default.autoApply=true
 
 #RUN sbt playGenerateSecret
 
